@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Shield, Users, Calendar, Trophy, BookOpen, Terminal, Menu, X , Instagram , MessageCircle} from 'lucide-react';
 import teamMember1 from './images/BhushanM.jpg';
 import teamMember2 from './images/PoojaJ.jpg';
+import teamMember6 from './images/KritankS.jpg';
+import facultyIncharge from './images/FacultyIncharge.jpg';
+import heroimg from './images/Recurit.jpg'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,9 +22,9 @@ function App() {
       description: "Regular Capture The Flag competitions to test and improve security skills."
     },
     {
-      title: "Security Research",
+      title: "Group Discussion",
       icon: <BookOpen className="w-8 h-8 text-blue-600" />,
-      description: "Collaborative research projects on emerging cyber security threats."
+      description: "Interactive discussions where members analyze and debate cybersecurity topics to enhance critical thinking and teamwork."
     },
     {
       title: "Coding Sessions",
@@ -32,14 +35,19 @@ function App() {
 
   const teamMembers = {
     faculty: {
-      name: "Rashmi Welekar",
-      role: "Faculty Advisor",
-      expertise: "Cybersecurity & Network Security",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80"
+      name: "Dr. Rashmi Welekar",
+      role: "Faculty Incharge",
+      expertise: "Information Technology & Security",
+      image: facultyIncharge
     },
     leads: [
       {
         name: "Bhushan Madankar",
+        role: "President",
+        image: teamMember1
+      },
+      {
+        name: "Arnav Varhade",
         role: "President",
         image: teamMember1
       },
@@ -61,7 +69,7 @@ function App() {
       {
         name: "Kritank Singh",
         role: "Marketing Lead",
-        image: teamMember1
+        image: teamMember6
       },
       {
         name: "Nandini Sanghi",
@@ -236,22 +244,23 @@ function App() {
                 <span>Follow us on Instagram</span>
               </a>
             </div>
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 flex justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80" 
+                src={heroimg}
                 alt="Students working" 
                 className="rounded-lg shadow-lg"
+                style={{ width: '450px', height: 'auto' }}
               />
             </div>
           </div>
 
           {/* Faculty and Team Leads Section */}
           <div className="mt-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Our Leadership</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Our Team</h2>
             
             {/* Faculty Advisor */}
             <div className="mb-16">
-              <h3 className="text-2xl font-semibold text-center mb-8">Faculty Advisor</h3>
+              <h3 className="text-2xl font-semibold text-center mb-8">Faculty Incharge</h3>
               <div className="flex flex-col items-center">
                 <img 
                   src={teamMembers.faculty.image} 
@@ -352,7 +361,7 @@ function App() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>Email: cyber.club@college.edu</li>
+                <li>Email: rbucyberclub@gmail.com</li>
                 <li className="pt-1">
                   <a 
                     href="https://chat.whatsapp.com/CmUqs6skhoH0GOscew6PCB" 
