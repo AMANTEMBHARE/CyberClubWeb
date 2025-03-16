@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Shield, Users, Calendar, Trophy, BookOpen, Terminal, Menu, X } from 'lucide-react';
+import { Shield, Users, Calendar, Trophy, BookOpen, Terminal, Menu, X , Instagram , MessageCircle} from 'lucide-react';
+import teamMember1 from './images/BhushanM.jpg';
+import teamMember2 from './images/PoojaJ.jpg';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,22 +40,44 @@ function App() {
     leads: [
       {
         name: "Bhushan Madankar",
-        role: "Web Security Lead",
-        expertise: "Application Security",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80"
+        role: "President",
+        image: teamMember1
       },
       {
-        name: "Arnav",
-        role: "Network Security Lead",
-        expertise: "Network Protocols & Defense",
-        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80"
+        name: "Pooja Jaiswal",
+        role: "Technical Lead",
+        image: teamMember2
       },
       {
-        name: "James Wilson",
-        role: "CTF Team Lead",
-        expertise: "Reverse Engineering",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80"
-      }
+        name: "Mahak Arora",
+        role: "Graphics Lead",
+        image: teamMember2
+      },
+      {
+        name: "Praharsh Bawankar",
+        role: "Social Lead",
+        image: teamMember2
+      },
+      {
+        name: "Kritank Singh",
+        role: "Marketing Lead",
+        image: teamMember1
+      },
+      {
+        name: "Nandini Sanghi",
+        role: "Marketing Lead",
+        image: teamMember2
+      },
+      {
+        name: "Vanshika Sarda",
+        role: "Logistics Lead",
+        image: teamMember2
+      },
+      {
+        name: "Harshika Rathod",
+        role: "Logistics Lead",
+        image: teamMember2
+      },
     ]
   };
 
@@ -69,6 +93,10 @@ function App() {
     {
       url: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&q=80",
       title: "Team Meeting"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80",
+      title: "Coding Workshop"
     },
     {
       url: "https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?auto=format&fit=crop&q=80",
@@ -188,16 +216,25 @@ function App() {
             <div className="md:w-1/2">
               <h2 className="text-3xl font-bold mb-6">About Our Club</h2>
               <p className="text-gray-600 mb-4">
-                The Cyber Security Club is a student-led organization dedicated to promoting cyber security awareness and technical expertise among college students. We provide a platform for learning, collaboration, and practical experience in various aspects of information security.
+              The Cyber Security Club is a student-led organization that operates under the guidance of Nagpur Police Commissioner Ravindra Singhal Sir. Our mission is to promote cybersecurity awareness, technical skills, and ethical practices among college students. With the ever-growing concern of cyber threats, we aim to educate and empower the next generation of cybersecurity professionals.
               </p>
               <div className="flex items-center gap-4 mb-4">
                 <Users className="w-6 h-6 text-blue-600" />
                 <span className="text-gray-700">100+ Active Members</span>
               </div>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 mb-4">
                 <Calendar className="w-6 h-6 text-blue-600" />
                 <span className="text-gray-700">Weekly Meetings & Activities</span>
               </div>
+              <a 
+                href="https://www.instagram.com/rbu_cyber_club?igsh=MWJ6bnZ3NDJwNTI5NA==" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition duration-300"
+              >
+                <Instagram className="w-6 h-6" />
+                <span>Follow us on Instagram</span>
+              </a>
             </div>
             <div className="md:w-1/2">
               <img 
@@ -229,21 +266,21 @@ function App() {
 
             {/* Team Leads */}
             <div>
-              <h3 className="text-2xl font-semibold text-center mb-8">Domain Leads</h3>
-              <div className="grid md:grid-cols-3 gap-8">
-                {teamMembers.leads.map((lead, index) => (
-                  <div key={index} className="flex flex-col items-center">
-                    <img 
-                      src={lead.image} 
-                      alt={lead.name}
-                      className="w-32 h-32 rounded-full object-cover mb-4"
-                    />
-                    <h4 className="text-lg font-semibold">{lead.name}</h4>
-                    <p className="text-blue-600 font-medium">{lead.role}</p>
-                    <p className="text-gray-600 text-center">{lead.expertise}</p>
-                  </div>
-                ))}
-              </div>
+              <h3  className="text-2xl font-semibold text-center mb-8">Domain Leads</h3>
+              <div className="flex flex-nowrap justify-center gap-7">
+  {teamMembers.leads.map((lead, index) => (
+    <div key={index} className="flex flex-col items-center">
+      <img 
+        src={lead.image} 
+        alt={lead.name}
+        className="w-32 h-32 rounded-full object-cover mb-4"
+      />
+      <h4 className="text-lg font-semibold text-center">{lead.name}</h4>
+      <p className="text-blue-600 font-medium text-center">{lead.role}</p>
+    </div>
+  ))}
+</div>
+
             </div>
           </div>
         </div>
@@ -316,13 +353,33 @@ function App() {
               <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
               <ul className="space-y-2 text-gray-400">
                 <li>Email: cyber.club@college.edu</li>
-                <li>Location: Computer Science Building</li>
-                <li>Meeting Time: Every Wednesday, 4:00 PM</li>
+                <li className="pt-1">
+                  <a 
+                    href="https://chat.whatsapp.com/CmUqs6skhoH0GOscew6PCB" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-400 hover:text-green-400 transition duration-300"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    <span>Join WhatsApp Community</span>
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://t.me/cyberclub" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition duration-300"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    <span>Join Telegram Channel</span>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Cyber Security Club. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Cyber Club. All rights reserved.</p>
           </div>
         </div>
       </footer>
